@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send Pitches — FrostyTagYT</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .pitch-card { margin-bottom: 2rem; }
+    .pitch-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--bg-elevated); border: 1px solid var(--border);
+      color: var(--text); padding: 0.6rem 1.1rem; border-radius: 999px;
+      font-weight: 600; font-size: 0.9rem; cursor: pointer;
+    }
+    .btn-secondary:hover { border-color: var(--frost-dim); color: var(--frost-bright); }
+    .status { font-size: 0.85rem; color: var(--success); margin-top: 0.5rem; min-height: 1.2rem; }
+    .live-url {
+      background: var(--bg-elevated); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 2rem;
+      font-family: monospace; font-size: 0.95rem; word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">❄️</span> FrostyTagYT</a>
+      <ul class="nav-links">
+        <li><a href="send-pitches.html" class="active">Send Pitches</a></li>
+        <li><a href="media-outreach.html">Get 4 Links</a></li>
+      </ul>
+      <a href="https://www.tiktok.com/@frostytagyt" target="_blank" rel="noopener" class="tiktok-btn">@frostytagyt</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="article-header">
+      <p class="category">Ready to Send</p>
+      <h1>4 Pitch Emails — Click to Send</h1>
+      <p class="article-meta">Each pitch is customized for the outlet. Use the buttons below.</p>
+    </header>
+
+    <div class="live-url">
+      <strong>Your live press kit URL:</strong><br>
+      <span id="site-url">https://blankslate-ii.github.io/frostytagyt-press/</span>
+    </div>
+
+    <div class="warning-box">
+      <h3>Before you send</h3>
+      <p>Replace <code>YOUR_EMAIL@gmail.com</code> in each email with your real email address. Pitches open in your default mail app — you still need to hit Send.</p>
+    </div>
+
+    <div class="card pitch-card" id="pitch1">
+      <h3>1. Road to VR</h3>
+      <p><strong>To:</strong> tips@roadtovr.com · Major independent VR news site (est. 2011)</p>
+      <div class="pitch-actions">
+        <a class="btn-primary" id="mailto1" href="#">Open in Email App</a>
+        <button class="btn-secondary" onclick="copyPitch(1)">Copy Text</button>
+      </div>
+      <div class="status" id="status1"></div>
+    </div>
+
+    <div class="card pitch-card" id="pitch2">
+      <h3>2. UploadVR</h3>
+      <p><strong>Via:</strong> Contact form · Leading VR publication</p>
+      <div class="pitch-actions">
+        <a class="btn-primary" href="https://www.uploadvr.com/contact/" target="_blank" rel="noopener">Open Contact Form</a>
+        <button class="btn-secondary" onclick="copyPitch(2)">Copy Message</button>
+      </div>
+      <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--text-muted)">Select <strong>"Send Us A Story"</strong> on the form, then paste the copied message.</p>
+      <div class="status" id="status2"></div>
+    </div>
+
+    <div class="card pitch-card" id="pitch3">
+      <h3>3. VR Scout</h3>
+      <p><strong>Via:</strong> Contact form · VR culture & creator publication</p>
+      <div class="pitch-actions">
+        <a class="btn-primary" href="https://vrscout.com/contact/" target="_blank" rel="noopener">Open Contact Form</a>
+        <button class="btn-secondary" onclick="copyPitch(3)">Copy Message</button>
+      </div>
+      <div class="status" id="status3"></div>
+    </div>
+
+    <div class="card pitch-card" id="pitch4">
+      <h3>4. Game Developer</h3>
+      <p><strong>Via:</strong> Contact form · Major games industry outlet (GDC)</p>
+      <div class="pitch-actions">
+        <a class="btn-primary" href="https://www.gamedeveloper.com/about/contact-us" target="_blank" rel="noopener">Open Contact Form</a>
+        <button class="btn-secondary" onclick="copyPitch(4)">Copy Message</button>
+      </div>
+      <div class="status" id="status4"></div>
+    </div>
+
+    <div class="info-box">
+      <h3>After sending</h3>
+      <p>Follow up in 5 days if no reply. Track responses on <a href="media-outreach.html">Get 4 Links</a>. When articles publish, paste those URLs into TikTok's verification form.</p>
+    </div>
+  </main>
+
+  <script>
+    const SITE = 'https://blankslate-ii.github.io/frostytagyt-press/';
+
+    const pitches = {
+      1: {
+        subject: 'Story Pitch: Gorilla Tag Creator Building Mods + 28K TikTok Audience',
+        body: `Hi Road to VR team,
+
+I'm pitching a story about a rising creator in the Gorilla Tag VR ecosystem.
+
+I'm FrostyTagYT (@frostytagyt on TikTok) — a Gorilla Tag content creator with 28.4K followers. What makes this different from typical gaming influencers: I also develop and release mods and community tools for Gorilla Tag players (wrist watch mods, lobby utilities).
+
+Story angles that may fit Road to VR:
+• How mid-tier TikTok creators (25K–50K) are building careers through Gorilla Tag LIVE streaming
+• The mod-developer side of VR gaming — creators who ship tools, not just clips
+• Gorilla Tag's TikTok micro-community and the creators driving its culture in 2026
+
+I'm available for interview, quotes, screenshots, or mod demos.
+
+Press kit: ${SITE}press-kit.html
+TikTok: https://www.tiktok.com/@frostytagyt
+
+Thanks for considering,
+FrostyTagYT
+YOUR_EMAIL@gmail.com`
+      },
+      2: {
+        subject: 'Story Tip: Gorilla Tag Mod Developer with 28.4K TikTok Following',
+        body: `Hi UploadVR team,
+
+Story tip for your editorial team:
+
+FrostyTagYT (@frostytagyt) is a Gorilla Tag VR creator on TikTok with 28.4K followers who also develops community mods and tools for the game — a rare combo of entertainer and builder in the VR space.
+
+Angles: TikTok LIVE streaming in VR gaming, Gorilla Tag's creator economy, mod development by content creators.
+
+Press kit: ${SITE}press-kit.html
+TikTok: https://www.tiktok.com/@frostytagyt
+
+Happy to provide interview, demos, or additional info.
+
+FrostyTagYT
+YOUR_EMAIL@gmail.com`
+      },
+      3: {
+        subject: 'Creator Spotlight Pitch: FrostyTagYT — Gorilla Tag TikTok LIVE Streamer',
+        body: `Hi VR Scout team,
+
+I'd like to pitch a creator spotlight on FrostyTagYT (@frostytagyt).
+
+28.4K TikTok followers, regular LIVE streams, and active mod development for the Gorilla Tag community. Strong angle for VR Scout's audience interested in how creators are building audiences through TikTok LIVE in 2026.
+
+Press kit: ${SITE}press-kit.html
+Profile: ${SITE}creator-profile.html
+TikTok: https://www.tiktok.com/@frostytagyt
+
+Available for interview anytime.
+
+FrostyTagYT
+YOUR_EMAIL@gmail.com`
+      },
+      4: {
+        subject: 'Pitch: Grassroots Mod Developer Building Audience in Gorilla Tag Ecosystem',
+        body: `Hi Game Developer team,
+
+Pitch for a short feature or community story:
+
+FrostyTagYT (@frostytagyt) represents an interesting intersection in games — a TikTok creator (28.4K followers) in the Gorilla Tag VR space who also ships mods and community tools, not just content. Relevant to discussions about creator economies, live service communities, and grassroots development.
+
+Press kit: ${SITE}press-kit.html
+TikTok: https://www.tiktok.com/@frostytagyt
+
+I can provide quotes, technical details on mod work, and streaming metrics.
+
+FrostyTagYT
+YOUR_EMAIL@gmail.com`
+      }
+    };
+
+    function buildMailto(num) {
+      const p = pitches[num];
+      return `mailto:tips@roadtovr.com?subject=${encodeURIComponent(p.subject)}&body=${encodeURIComponent(p.body)}`;
+    }
+
+    document.getElementById('mailto1').href = buildMailto(1);
+
+    function copyPitch(num) {
+      const text = `Subject: ${pitches[num].subject}\n\n${pitches[num].body}`;
+      navigator.clipboard.writeText(text).then(() => {
+        document.getElementById('status' + num).textContent = '✓ Copied to clipboard — paste into the form or email.';
+      });
+    }
+  </script>
+</body>
+</html>
