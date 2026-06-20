@@ -1,20 +1,21 @@
 $Site = "https://blankslate-ii.github.io/frostytagyt-press/"
 
-$pitches = @(
-    @{
-        Name = "VR Scout"
-        Url = "https://vrscout.com/contact/"
-        Body = @"
-Subject: Creator Spotlight Pitch: FrostyTagYT - Gorilla Tag TikTok LIVE Streamer
+Write-Host ""
+Write-Host "VR Scout contact page is DEAD (404)." -ForegroundColor Yellow
+Write-Host "Using working replacements for links 3 and 4:" -ForegroundColor Cyan
+Write-Host "  3) UploadVR contact form" -ForegroundColor White
+Write-Host "  4) Another Axiom Creator Program (Gorilla Tag devs)" -ForegroundColor White
+Write-Host ""
 
-Hi VR Scout team,
+# Link 3 - UploadVR form
+$uploadvr = @"
+Subject: Story Tip: Gorilla Tag TikTok Creator and Mod Developer
 
-I'd like to pitch a creator spotlight on FrostyTagYT (@frostytagyt).
+Hi UploadVR team,
 
-28.4K TikTok followers, regular Gorilla Tag LIVE streams, and active mod development for the VR community. Strong fit for VR Scout's creator audience.
+Story tip for FrostyTagYT (@frostytagyt) - Gorilla Tag VR creator on TikTok with 28.4K followers who also develops community mods and tools.
 
 Press kit: ${Site}press-kit.html
-Profile: ${Site}creator-profile.html
 TikTok: https://www.tiktok.com/@frostytagyt
 Email: lukedonovanyoung2020@outlook.com
 
@@ -22,40 +23,29 @@ Available for interview.
 
 FrostyTagYT
 "@
-    },
-    @{
-        Name = "Game Developer"
-        Url = "https://www.gamedeveloper.com/about/contact-us"
-        Body = @"
-Subject: Pitch: Grassroots Mod Developer Building Audience in Gorilla Tag
+Set-Clipboard -Value $uploadvr
+Start-Process "https://www.uploadvr.com/contact/"
+Write-Host "[3/4] UploadVR form opened - select SEND US A STORY, then Ctrl+V" -ForegroundColor Green
+Start-Sleep -Seconds 3
 
-Hi Game Developer team,
+# Link 4 - Another Axiom Creator Portal (TikToker application)
+$aaNote = @"
+Another Axiom Creator Program - apply as TikToker/Live Streamer
 
-Pitch for a community/creator story:
-
-FrostyTagYT (@frostytagyt) - TikTok creator (28.4K followers) in the Gorilla Tag VR space who also ships mods and community tools, not just content. Relevant to creator economies and live service communities.
-
-Press kit: ${Site}press-kit.html
-TikTok: https://www.tiktok.com/@frostytagyt
-Email: lukedonovanyoung2020@outlook.com
-
-Happy to provide quotes or technical details.
-
-FrostyTagYT
+Your info for the application:
+- Handle: @frostytagyt
+- Followers: 28.4K
+- Niche: Gorilla Tag VR, TikTok LIVE, mod development
+- Press kit: ${Site}press-kit.html
+- Email: lukedonovanyoung2020@outlook.com
+- TikTok: https://www.tiktok.com/@frostytagyt
 "@
-    }
-)
+Set-Clipboard -Value $aaNote
+Start-Process "https://aa-creator-portal.pages.dev/"
+Start-Process "https://www.anotheraxiom.com/aa-creator"
+Write-Host "[4/4] Another Axiom Creator Portal opened - apply as TikToker" -ForegroundColor Green
 
-Write-Host "Opening your LAST 2 outlet pitches (VR Scout + Game Developer)..." -ForegroundColor Cyan
-Write-Host "Paste with Ctrl+V on each form and submit.`n" -ForegroundColor Yellow
-
-foreach ($p in $pitches) {
-    Set-Clipboard -Value $p.Body
-    Start-Process $p.Url
-    Write-Host "[OPENED] $($p.Name) - message copied to clipboard" -ForegroundColor Green
-    Start-Sleep -Seconds 2
-}
-
-Write-Host "`nDone. Submit both forms = 4 outlets total pitched." -ForegroundColor Cyan
-Write-Host "Wait for them to PUBLISH articles, then paste real URLs in TikTok."
+Write-Host ""
+Write-Host "Done. Submit UploadVR form + AA Creator application." -ForegroundColor Cyan
+Write-Host "Note: AA Creator Program is not a news article - still need outlets to PUBLISH about you for TikTok." -ForegroundColor Yellow
 pause
