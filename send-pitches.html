@@ -38,8 +38,8 @@
   <main class="container">
     <header class="article-header">
       <p class="category">Ready to Send</p>
-      <h1>4 Pitch Emails — Click to Send</h1>
-      <p class="article-meta">Each pitch is customized for the outlet. Use the buttons below.</p>
+      <h1>Verification Blitz — Send What's Left</h1>
+      <p class="article-meta">Road to VR &amp; UploadVR email already sent. Use NEW outlets below.</p>
     </header>
 
     <div class="live-url">
@@ -48,54 +48,71 @@
     </div>
 
     <div class="warning-box">
-      <h3>Before you send</h3>
-      <p>Contact email: <strong>lukedonovanyoung2020@outlook.com</strong> — included in all pitches below.</p>
+      <h3>Status</h3>
+      <p><strong>Already sent (do not re-email):</strong> Road to VR, UploadVR email.<br>
+      <strong>Just sent:</strong> Virtual Reality News (<code>contact@wonderhowto.com</code>).<br>
+      <strong>You still need to submit:</strong> UploadVR form, AA Creator Program, HARO signup.</p>
+    </div>
+
+    <div class="card pitch-card" style="border-color:rgba(52,211,153,0.4)">
+      <h3>Run everything — double-click SEND-VERIFICATION.bat</h3>
+      <p>Opens all remaining forms + copies pitches. Or use each outlet below.</p>
     </div>
 
     <div class="card pitch-card" id="pitch1">
-      <h3>1. Road to VR</h3>
-      <p><strong>To:</strong> tips@roadtovr.com · Major independent VR news site (est. 2011)</p>
+      <h3>1. Virtual Reality News / Next Reality</h3>
+      <p><strong>To:</strong> contact@wonderhowto.com · <span style="color:var(--success)">SENT via Outlook</span></p>
       <div class="pitch-actions">
-        <a class="btn-primary" id="mailto1" href="#">Open in Email App</a>
-        <button class="btn-secondary" onclick="copyPitch(1)">Copy Text</button>
+        <button class="btn-secondary" onclick="copyPitch(1)">Copy Pitch</button>
       </div>
       <div class="status" id="status1"></div>
     </div>
 
     <div class="card pitch-card" id="pitch2">
-      <h3>2. UploadVR</h3>
-      <p><strong>Via:</strong> Contact form · Leading VR publication</p>
+      <h3>2. UploadVR (form only)</h3>
+      <p><strong>Via:</strong> Contact form · Email already sent — submit form if not done</p>
       <div class="pitch-actions">
         <a class="btn-primary" href="https://www.uploadvr.com/contact/" target="_blank" rel="noopener">Open Contact Form</a>
         <button class="btn-secondary" onclick="copyPitch(2)">Copy Message</button>
       </div>
-      <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--text-muted)">Select <strong>"Send Us A Story"</strong> on the form, then paste the copied message.</p>
+      <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--text-muted)">Select <strong>"Send Us A Story"</strong>, paste, submit.</p>
       <div class="status" id="status2"></div>
     </div>
 
     <div class="card pitch-card" id="pitch3">
-      <h3>3. VR Scout</h3>
-      <p><strong>Via:</strong> Contact form · VR culture & creator publication</p>
+      <h3>3. Another Axiom Creator Program</h3>
+      <p><strong>Via:</strong> Application portal · Not a news article, but official GT recognition</p>
       <div class="pitch-actions">
-        <a class="btn-primary" href="https://vrscout.com/contact/" target="_blank" rel="noopener">Open Contact Form</a>
-        <button class="btn-secondary" onclick="copyPitch(3)">Copy Message</button>
+        <a class="btn-primary" href="https://aa-creator-portal.pages.dev/" target="_blank" rel="noopener">Open Portal</a>
+        <button class="btn-secondary" onclick="copyPitch(3)">Copy Application Notes</button>
       </div>
       <div class="status" id="status3"></div>
     </div>
 
     <div class="card pitch-card" id="pitch4">
-      <h3>4. Game Developer</h3>
-      <p><strong>Via:</strong> Contact form · Major games industry outlet (GDC)</p>
+      <h3>4. HARO (journalists find you)</h3>
+      <p><strong>Via:</strong> Free signup · Reply when journalists ask for VR/TikTok expert quotes</p>
       <div class="pitch-actions">
-        <a class="btn-primary" href="https://www.gamedeveloper.com/about/contact-us" target="_blank" rel="noopener">Open Contact Form</a>
-        <button class="btn-secondary" onclick="copyPitch(4)">Copy Message</button>
+        <a class="btn-primary" href="https://www.helpareporter.com/sources/" target="_blank" rel="noopener">Sign Up as Source</a>
+        <button class="btn-secondary" onclick="copyPitch(4)">Copy Expert Bio</button>
       </div>
       <div class="status" id="status4"></div>
     </div>
 
+    <div class="card pitch-card" id="pitch5">
+      <h3>5. Local news / Patch</h3>
+      <p><strong>Via:</strong> Your city paper or patch.com · Fast human-interest stories</p>
+      <div class="pitch-actions">
+        <a class="btn-primary" href="https://www.patch.com" target="_blank" rel="noopener">Find Your Patch</a>
+        <button class="btn-secondary" onclick="copyPitch(5)">Copy Local Pitch</button>
+      </div>
+      <div class="status" id="status5"></div>
+    </div>
+
     <div class="info-box">
-      <h3>After sending</h3>
-      <p>Follow up in 5 days if no reply. Track responses on <a href="media-outreach.html">Get 4 Links</a>. When articles publish, paste those URLs into TikTok's verification form.</p>
+      <h3>Waiting game</h3>
+      <p>Need <strong>1–4 published URLs</strong> that mention <strong>@frostytagyt</strong> by name. Wait 1–2 weeks. No follow-ups for 7 days. Track on <a href="media-outreach.html">Get 4 Links</a>.</p>
+      <p style="margin-top:0.5rem;color:#fbbf24"><strong>Do not re-email Road to VR or UploadVR.</strong></p>
     </div>
   </main>
 
@@ -104,86 +121,67 @@
 
     const pitches = {
       1: {
-        subject: 'Story Pitch: Gorilla Tag Creator Building Mods + 28K TikTok Audience',
-        body: `Hi Road to VR team,
+        subject: 'Story Pitch for Virtual Reality News - Gorilla Tag TikTok Creator + Mod Developer',
+        body: `Hi Virtual Reality News / Next Reality editorial team,
 
-I'm pitching a story about a rising creator in the Gorilla Tag VR ecosystem.
+I'm pitching a creator profile that fits your Gorilla Tag coverage — including your recent piece on Meta betting VR's future on teens who grew up in Gorilla Tag.
 
-I'm FrostyTagYT (@frostytagyt on TikTok) — a Gorilla Tag content creator with 28.4K followers. What makes this different from typical gaming influencers: I also develop and release mods and community tools for Gorilla Tag players (wrist watch mods, lobby utilities).
-
-Story angles that may fit Road to VR:
-• How mid-tier TikTok creators (25K–50K) are building careers through Gorilla Tag LIVE streaming
-• The mod-developer side of VR gaming — creators who ship tools, not just clips
-• Gorilla Tag's TikTok micro-community and the creators driving its culture in 2026
-
-I'm available for interview, quotes, screenshots, or mod demos.
+FrostyTagYT (@frostytagyt on TikTok) is a Gorilla Tag VR creator with 28.4K followers who also develops community mods and tools.
 
 Press kit: ${SITE}press-kit.html
+Creator profile: ${SITE}creator-profile.html
 TikTok: https://www.tiktok.com/@frostytagyt
 
-Thanks for considering,
+Available for interview, quotes, screenshots, or mod demos.
+
 FrostyTagYT
 lukedonovanyoung2020@outlook.com`
       },
       2: {
         subject: 'Story Tip: Gorilla Tag Mod Developer with 28.4K TikTok Following',
-        body: `Hi UploadVR team,
+        body: `Story tip for UploadVR editorial:
 
-Story tip for your editorial team:
-
-FrostyTagYT (@frostytagyt) is a Gorilla Tag VR creator on TikTok with 28.4K followers who also develops community mods and tools for the game — a rare combo of entertainer and builder in the VR space.
-
-Angles: TikTok LIVE streaming in VR gaming, Gorilla Tag's creator economy, mod development by content creators.
+FrostyTagYT (@frostytagyt) is a Gorilla Tag VR creator on TikTok with 28.4K followers who also develops community mods and tools.
 
 Press kit: ${SITE}press-kit.html
 TikTok: https://www.tiktok.com/@frostytagyt
-
-Happy to provide interview, demos, or additional info.
 
 FrostyTagYT
 lukedonovanyoung2020@outlook.com`
       },
       3: {
-        subject: 'Creator Spotlight Pitch: FrostyTagYT — Gorilla Tag TikTok LIVE Streamer',
-        body: `Hi VR Scout team,
+        subject: 'Another Axiom Creator Program Application',
+        body: `Another Axiom Creator Program — application notes:
 
-I'd like to pitch a creator spotlight on FrostyTagYT (@frostytagyt).
-
-28.4K TikTok followers, regular LIVE streams, and active mod development for the Gorilla Tag community. Strong angle for VR Scout's audience interested in how creators are building audiences through TikTok LIVE in 2026.
-
+Handle: @frostytagyt
+Followers: 28.4K (TikTok)
+Niche: Gorilla Tag VR, TikTok LIVE, mod development
 Press kit: ${SITE}press-kit.html
-Profile: ${SITE}creator-profile.html
-TikTok: https://www.tiktok.com/@frostytagyt
-
-Available for interview anytime.
-
-FrostyTagYT
-lukedonovanyoung2020@outlook.com`
+Email: lukedonovanyoung2020@outlook.com
+TikTok: https://www.tiktok.com/@frostytagyt`
       },
       4: {
-        subject: 'Pitch: Grassroots Mod Developer Building Audience in Gorilla Tag Ecosystem',
-        body: `Hi Game Developer team,
+        subject: 'HARO Expert Bio',
+        body: `Gorilla Tag VR content creator and mod developer. TikTok: @frostytagyt (28.4K followers). Expert on VR-native teen creators, Gorilla Tag culture, TikTok LIVE streaming in VR, and grassroots mod development. Available for quotes/interviews.
 
-Pitch for a short feature or community story:
+Press kit: ${SITE}press-kit.html
+Email: lukedonovanyoung2020@outlook.com`
+      },
+      5: {
+        subject: 'Local Story Tip — Teen VR Creator with 28K TikTok Following',
+        body: `Hi [Editor],
 
-FrostyTagYT (@frostytagyt) represents an interesting intersection in games — a TikTok creator (28.4K followers) in the Gorilla Tag VR space who also ships mods and community tools, not just content. Relevant to discussions about creator economies, live service communities, and grassroots development.
+Local story idea: I'm FrostyTagYT (@frostytagyt), a [YOUR CITY] creator with 28.4K TikTok followers in the Gorilla Tag VR community. I stream on TikTok LIVE and develop mods used by players worldwide.
 
 Press kit: ${SITE}press-kit.html
 TikTok: https://www.tiktok.com/@frostytagyt
 
-I can provide quotes, technical details on mod work, and streaming metrics.
+Happy to interview.
 
 FrostyTagYT
 lukedonovanyoung2020@outlook.com`
       }
     };
-
-    function buildMailto(num) {
-      const p = pitches[num];
-      return `mailto:tips@roadtovr.com?subject=${encodeURIComponent(p.subject)}&body=${encodeURIComponent(p.body)}`;
-    }
-
-    document.getElementById('mailto1').href = buildMailto(1);
 
     function copyPitch(num) {
       const text = `Subject: ${pitches[num].subject}\n\n${pitches[num].body}`;
